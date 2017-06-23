@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+  <style>
+      body{
+        background-color: greenyellow;
+      }
+      .pk-container{
+        width: 150px;
+        height: 200px;
+        border: 1px solid gray;
+        position: relative;
+        margin: 200px auto;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        /* 过渡 */
+        transition: 1s;
+
+        /* 变换的 中心点 默认是 元素的 正中心 */
+        transform-origin: top right;
+      }
+
+      /* 2.鼠标 hover的时候 扑克牌开始旋转  每一张 旋转的角度 不一样的
+        360 / 6 = 60
+       */
+       .pk-container:hover img:nth-child(1){
+         transform: rotate(60deg);
+       }
+       .pk-container:hover img:nth-child(2){
+         transform: rotate(120deg);
+       }
+       .pk-container:hover img:nth-child(3){
+         transform: rotate(180deg);
+       }
+       .pk-container:hover img:nth-child(4){
+         transform: rotate(240deg);
+       }
+       .pk-container:hover img:nth-child(5){
+         transform: rotate(300deg);
+       }
+       .pk-container:hover img:nth-child(6){
+         transform: rotate(360deg);
+       }
+
+       /* 3. 设置 扑克容器的 过渡属性 */
+       .pk-container{
+         /* 第一次出现的时间是 持续时间 
+            第二次出现的时间是 延迟时间
+          */
+         transition: 1s 1s;
+         /* 变换中心点 */
+         transform-origin: top right;
+       }
+
+       /* 4.鼠标hover到 pk-container上时 等扑克旋转完毕 再旋转自己*/
+       .pk-container:hover{
+         transform: rotate(360deg);
+       }
+  </style>
+</head>
+
+<body>
+  <div class="pk-container">
+    <img src="img/pk1.png" alt="">
+    <img src="img/pk1.png" alt="">
+    <img src="img/pk1.png" alt="">
+    <img src="img/pk1.png" alt="">
+    <img src="img/pk1.png" alt="">
+    <img src="img/pk1.png" alt="">
+  </div>
+</body>
+
+</html>
